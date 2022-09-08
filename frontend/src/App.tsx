@@ -2,12 +2,12 @@ import React from "react";
 import logo from "./logo.svg";
 import "./App.css";
 import LoginPage from "./Login/LoginPage";
-
+import background from "./loginBackground.jpg";
 function App() {
   return (
-    <div style={{ margin: "100px", width: "100%", height: "100%", backgroundColor: "yellow" }}>
+    <div style={{ width: "100vw", height: "100vh", backgroundImage: `url(${background})` }}>
 
-      <LoginPage number={1} />
+      <LoginPage />
     </ div>
     // <div className="App">
     //   <header className="App-header">

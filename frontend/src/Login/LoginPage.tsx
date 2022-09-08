@@ -1,48 +1,101 @@
 import React from 'react';
 import { Button, Card, Form } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.css';
-
+import './LoginPage.css'
 type LoginPageProps = {
-    number: number;
+    // number: number;
 }
 
 
-const LoginPage = ({ number }: LoginPageProps): JSX.Element => {
-    // return (
-    //     <Form>
-    //         <Form.Group className="mb-3" controlId="formBasicEmail">
-    //             <Form.Label>Email address</Form.Label>
-    //             <Form.Control type="email" placeholder="Enter email" />
-    //             <Form.Text className="text-muted">
-    //                 We'll never share your email with anyone else.
-    //         </Form.Text>
-    //         </Form.Group>
-
-    //         <Form.Group className="mb-3" controlId="formBasicPassword">
-    //             <Form.Label>Password</Form.Label>
-    //             <Form.Control type="password" placeholder="Password" />
-    //         </Form.Group>
-    //         <Form.Group className="mb-3" controlId="formBasicCheckbox">
-    //             <Form.Check type="checkbox" label="Check me out" />
-    //         </Form.Group>
-    //         <Button variant="primary" type="submit">
-    //             Submit
-    //       </Button>
-    //     </Form>`
-    // );
+const LoginPage = (): JSX.Element => {
     const handleSubmit = () => {
 
     }
 
     return (<>
-        <Card style={{ width: "100%", height: "100%" }}>
+        <Card style={{ marginLeft: "40vw", top: "15vh", width: "20%", height: "70%" }}>
             <Form onSubmit={handleSubmit}>
-                <Form.Label>
-                    Username {number}
-                </Form.Label>
-                <Form.Control type="username" placeholder="Enter your username">
-                </Form.Control>
-                <Button type="submit">Submit</Button>
+                <div className="mt-5 row">
+                    <div className="col"></div>
+                    <div className="col" style={{ display: "flex", justifyContent: "center" }}>
+                        <Form.Label style={{ fontSize: "30px", fontWeight: "bold" }}>
+                            Login
+                        </Form.Label>
+                    </div>
+                    <div className="col"></div>
+                </div>
+                <div className="mt-3 row">
+                    <div className="col-1"></div>
+                    <div className="col">
+                        <Form.Label>Username</Form.Label>
+                    </div>
+                    <div className="col-1"></div>
+                </div>
+                <div className="row">
+                    <div className="col-1"></div>
+                    <div className="col">
+                        <div className="row">
+                            <label id="usernameInputBoxLabel">
+                                <Form.Control className="inputBox" type="username" placeholder="Enter username" />
+                            </label>
+                        </div>
+                    </div>
+                    <div className="col-1"></div>
+                </div>
+                <div className="mt-3 row">
+                    <div className="col-1"></div>
+                    <div className="col">
+                        <Form.Label>Password</Form.Label>
+                    </div>
+                    <div className="col-1"></div>
+                </div>
+                <div className="row">
+                    <div className="col-1"></div>
+                    <div className="col">
+                        <div className="row">
+                            <label id="passwordInputBoxLabel">
+                                <Form.Control className="inputBox" type="password" placeholder="Enter password" />
+                            </label>
+                        </div>
+                    </div>
+                    <div className="col-1"></div>
+                </div>
+                <div className="mt-1 row">
+                    <div className="col-1"></div>
+                    <div className="col">
+                        <div className="float-right">
+                            <span style={{ float: "right", fontSize: "12px" }}>Forgot Password?</span>
+                        </div>
+                    </div>
+                    <div className="col-1"></div>
+                </div>
+                <div className="row" style={{ marginTop: "10vh" }}>
+                    <div className="col-1"></div>
+                    <div className="col" style={{ display: "flex", justifyContent: "center" }}>
+                        <button id="submitButton">
+                            Sign in
+                        </button>
+                    </div>
+                    <div className="col-1"></div>
+                </div>
+                <div className="row" style={{ marginTop: "10vh" }}>
+                    <div className="col"></div>
+                    <div className="col" style={{ display: "flex", justifyContent: "center" }}>
+                        <Form.Label>
+                            Or Sign Up
+                        </Form.Label>
+                    </div>
+                    <div className="col"></div>
+                </div>
+                <div className="mt-1 row">
+                    <div className="col-1"></div>
+                    <div className="col" style={{ display: "flex", justifyContent: "center" }}>
+                        <button id="signUpButton">
+                            Sign in
+                        </button>
+                    </div>
+                    <div className="col-1"></div>
+                </div>
             </Form>
         </Card>
 
