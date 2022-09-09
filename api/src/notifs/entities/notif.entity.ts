@@ -13,23 +13,23 @@ enum NotifTypes {
   FriendRequest,
 }
 
-// @Entity
-// export class Notifications {
-//   @PrimaryGeneratedColumn()
-//   id: number;
+@Entity()
+export class Notifications {
+  @PrimaryGeneratedColumn()
+  id: number;
 
-//   @ManyToMany(() => Users)
-//   actionUsername: string;
+  @ManyToMany(() => Users)
+  actionUsername: string;
 
-//   @ManyToMany(() => Users)
-//   receiverUsername: string;
+  @ManyToMany(() => Users)
+  receiverUsername: string;
 
-//   @Column()
-//   typeOfNotif: NotifTypes;
+  @Column()
+  typeOfNotif: NotifTypes;
 
-//   @Column()
-//   description: string;
+  @Column()
+  description: string;
 
-//   @Column()
-//   notificationMessage: string;
-// }
+  @Column()
+  notificationMessage: string;
+}

@@ -1,10 +1,10 @@
-// import { Entity, Column, PrimaryGeneratedColumn } from 'typeorm';
+import { Entity, Column, PrimaryGeneratedColumn } from 'typeorm';
 
-// @Entity
-// export class Login {
-//   @PrimaryGeneratedColumn
-//   id: number;
+@Entity()
+export class Login {
+  @PrimaryGeneratedColumn()
+  id: number;
 
-//   // @
-//   // username: string;
-// }
+  @Column()
+  username: string;
+}
