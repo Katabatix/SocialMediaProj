@@ -1,3 +1,7 @@
+#loginPageCardBody  {
+    min-width: 400px; 
+}
+
 #usernameInputBoxLabel {
     position: relative; 
 }

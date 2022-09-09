@@ -1,20 +1,32 @@
 import React from 'react';
 import { Button, Card, Form } from 'react-bootstrap';
+import { BrowserRouter as Router, Route, Routes, useNavigate, Link } from "react-router-dom";
 import 'bootstrap/dist/css/bootstrap.css';
 import './LoginPage.css'
+import SigninPage from '../Signup/SignupPage';
 type LoginPageProps = {
     // number: number;
 }
 
 
 const LoginPage = (): JSX.Element => {
-    const handleSubmit = () => {
+    const navigate = useNavigate()
+    const handleSignin = (event: React.FormEvent<HTMLFormElement>) => {
+        event.preventDefault()
 
+        console.log("Sign in");
+    }
+    const Signup = (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
+        event.preventDefault()
+        // let navigate = useNavigate();
+        navigate('/signup')
+        console.log("Redirecting to sign up");
+        console.log(event);
     }
 
     return (<>
-        <Card style={{ marginLeft: "40vw", top: "15vh", width: "20%", height: "70%" }}>
-            <Form onSubmit={handleSubmit}>
+        <Card id="loginPageCardBody" style={{ marginLeft: "auto", marginRight: "auto", top: "15vh", width: "20%", height: "70%" }}>
+            <Form onSubmit={e => handleSignin(e)}>
                 <div className="mt-5 row">
                     <div className="col"></div>
                     <div className="col" style={{ display: "flex", justifyContent: "center" }}>
@@ -72,9 +84,9 @@ const LoginPage = (): JSX.Element => {
                 <div className="row" style={{ marginTop: "10vh" }}>
                     <div className="col-1"></div>
                     <div className="col" style={{ display: "flex", justifyContent: "center" }}>
-                        <button id="submitButton">
+                        <Button type="submit" id="submitButton">
                             Sign in
-                        </button>
+                        </Button>
                     </div>
                     <div className="col-1"></div>
                 </div>
@@ -87,17 +99,21 @@ const LoginPage = (): JSX.Element => {
                     </div>
                     <div className="col"></div>
                 </div>
-                <div className="mt-1 row">
+                <div className="row">
                     <div className="col-1"></div>
                     <div className="col" style={{ display: "flex", justifyContent: "center" }}>
-                        <button id="signUpButton">
-                            Sign in
+                        <button id="signUpButton" onClick={event => Signup(event)}>
+                            Sign up
                         </button>
                     </div>
+
+                    {/* <Navigate to="/signup">Sign up</Navigate> */}
                     <div className="col-1"></div>
                 </div>
             </Form>
         </Card>
+
+        {/* <Navigate to="/"></Navigate> */}
 
 
     </>)
