@@ -1,65 +1,69 @@
-.loginPageCardBody  {
-    min-width: 400px; 
-    max-height: 600px;
-    overflow-y: scroll;
-    overflow-x: hidden;
-    -ms-overflow-style: none;  /* IE and Edge */
-    scrollbar-width: none;  /* Firefox */
+.loginPageCardBody {
+  min-width: 400px;
+  max-height: 600px;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
 }
 
 .loginPageCardBody::-webkit-scrollbar {
-    /* Chrome, Safari, Opera*/ 
-    display: none;
+  /* Chrome, Safari, Opera*/
+  display: none;
 }
 #usernameInputBoxLabel {
-    position: relative; 
+  position: relative;
 }
 
 #usernameInputBoxLabel:before {
-    content: "";
-    position: absolute;
-    left: 20px;
-    top: 0;
-    bottom: 0;
-    width: 20px;
-    background: url("../svg/person.svg") center / contain no-repeat;
+  content: "";
+  position: absolute;
+  left: 20px;
+  top: 0;
+  bottom: 0;
+  width: 20px;
+  background: url("../svg/person.svg") center / contain no-repeat;
 }
 
-
 #passwordInputBoxLabel {
-    position: relative; 
+  position: relative;
 }
 
 #passwordInputBoxLabel:before {
-    content: "";
-    position: absolute;
-    left: 20px;
-    top: 0;
-    bottom: 0;
-    width: 20px;
-    background: url("../svg/key.svg") center / contain no-repeat;
+  content: "";
+  position: absolute;
+  left: 20px;
+  top: 0;
+  bottom: 0;
+  width: 20px;
+  background: url("../svg/key.svg") center / contain no-repeat;
 }
 
 .inputBox {
-    padding: 10px 40px;
+  padding: 10px 40px;
 }
 
 .submitButton {
-    color: white; 
-    padding: 10px 32px; 
-    cursor: pointer; 
-    margin: 4px 2px;
-    border: none; 
-    border-radius: 5px;
-    background: rgb(176,10,10);
-    background: linear-gradient(90deg, rgba(176,10,10,1) 0%, rgba(121,9,45,1) 35%, rgba(255,0,65,1) 100%);
+  color: white;
+  padding: 10px 32px;
+  cursor: pointer;
+  margin: 4px 2px;
+  border: none;
+  border-radius: 5px;
+  background: rgb(176, 10, 10);
+  background: linear-gradient(
+    90deg,
+    rgba(176, 10, 10, 1) 0%,
+    rgba(121, 9, 45, 1) 35%,
+    rgba(255, 0, 65, 1) 100%
+  );
 }
 
 #signUpButton {
-    background: transparent;
-    border: none;
-    cursor: pointer;
-    padding: 10px 32px; 
-    font-weight: bold;
-    color: gray
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 10px 32px;
+  font-weight: bold;
+  color: gray;
 }
