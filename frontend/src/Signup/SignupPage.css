@@ -1,0 +1,77 @@
+.loginPageCardBody  {
+    min-width: 400px; 
+    overflow-y: scroll;
+    overflow-x: hidden;
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+}
+
+.loginPageCardBody::-webkit-scrollbar {
+    /* Chrome, Safari, Opera*/ 
+    display: none;
+}
+
+#firstNameInputBoxLabel {
+    position: relative; 
+}
+
+#firstNameInputBoxLabel:before {
+    content: "";
+    position: absolute;
+    left: 20px;
+    top: 0;
+    bottom: 0;
+    width: 20px;
+    background: url("../svg/person-badge.svg") center / contain no-repeat;
+}
+
+
+#lastNameInputBoxLabel {
+    position: relative; 
+}
+
+#lastNameInputBoxLabel:before {
+    content: "";
+    position: absolute;
+    left: 20px;
+    top: 0;
+    bottom: 0;
+    width: 20px;
+    background: url("../svg/person-badge.svg") center / contain no-repeat;
+}
+
+
+#emailInputBoxLabel {
+    position: relative; 
+}
+
+#emailInputBoxLabel:before {
+    content: "";
+    position: absolute;
+    left: 20px;
+    top: 0;
+    bottom: 0;
+    width: 20px;
+    background: url("../svg/envelope.svg") center / contain no-repeat;
+}
+
+
+#dateInputBoxLabel {
+    position: relative; 
+}
+
+#dateInputBoxLabel:before {
+    content: "";
+    position: absolute;
+    left: 20px;
+    top: 0;
+    bottom: 0;
+    width: 20px;
+    background: url("../svg/balloon.svg") center / contain no-repeat;
+}
+
+.dateInputBox {
+    padding-left: 40px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}

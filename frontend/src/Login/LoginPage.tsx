@@ -16,16 +16,12 @@ const LoginPage = (): JSX.Element => {
 
         console.log("Sign in");
     }
-    const Signup = (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
-        event.preventDefault()
-        // let navigate = useNavigate();
-        navigate('/signup')
-        console.log("Redirecting to sign up");
-        console.log(event);
-    }
+
+    const Signup = (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => navigate('/signup');
+
 
     return (<>
-        <Card id="loginPageCardBody" style={{ marginLeft: "auto", marginRight: "auto", top: "15vh", width: "20%", height: "70%" }}>
+        <Card className="loginPageCardBody" style={{ marginLeft: "auto", marginRight: "auto", top: "15vh", width: "20%", height: "70%" }}>
             <Form onSubmit={e => handleSignin(e)}>
                 <div className="mt-5 row">
                     <div className="col"></div>
@@ -112,10 +108,6 @@ const LoginPage = (): JSX.Element => {
                 </div>
             </Form>
         </Card>
-
-        {/* <Navigate to="/"></Navigate> */}
-
-
     </>)
 }
 

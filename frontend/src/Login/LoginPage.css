@@ -1,5 +1,7 @@
-#loginPageCardBody  {
+.loginPageCardBody  {
     min-width: 400px; 
+    overflow-y: scroll;
+    overflow-x: hidden;
 }
 
 #usernameInputBoxLabel {
@@ -13,7 +15,7 @@
     top: 0;
     bottom: 0;
     width: 20px;
-    background: url("../person.svg") center / contain no-repeat;
+    background: url("../svg/person.svg") center / contain no-repeat;
 }
 
 
@@ -28,7 +30,7 @@
     top: 0;
     bottom: 0;
     width: 20px;
-    background: url("../key.svg") center / contain no-repeat;
+    background: url("../svg/key.svg") center / contain no-repeat;
 }
 
 .inputBox {
