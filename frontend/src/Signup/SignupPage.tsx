@@ -2,9 +2,14 @@ import React from 'react';
 import { Button, Card, Form } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.css';
 import './SignupPage.css'
+import { useNavigate } from 'react-router-dom';
 const SigninPage: React.FunctionComponent = () => {
+
+    const navigate = useNavigate()
+    const goBack = (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => navigate('/');
+
     return (
-        <Card className="loginPageCardBody" style={{ marginLeft: "auto", marginRight: "auto", top: "5vh", width: "20%", height: "90%" }}>
+        <Card className="signUpPageCardBody" style={{ marginLeft: "auto", marginRight: "auto", top: "5vh", width: "20%", height: "90%" }}>
             <Form onSubmit={e => { }}>
                 <div className="mt-5 row">
                     <div className="col"></div>
@@ -124,13 +129,16 @@ const SigninPage: React.FunctionComponent = () => {
                     <div className="col-1"></div>
                 </div>
                 <div className="mt-5 row">
-                    <div className="col-1"></div>
-                    <div className="col" style={{ display: "flex", justifyContent: "center" }}>
-                        <Button type="submit" id="submitButton">
+                    <div className="col-6" style={{ display: "flex", justifyContent: "right" }}>
+                        <Button onClick={goBack} className="submitButton">
+                            Cancel
+                        </Button>
+                    </div>
+                    <div className="col-6" style={{ display: "flex", justifyContent: "left" }}>
+                        <Button type="submit" className="submitButton">
                             Sign Up
                         </Button>
                     </div>
-                    <div className="col-1"></div>
                 </div>
             </Form>
         </Card>

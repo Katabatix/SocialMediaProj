@@ -1,9 +1,16 @@
 .loginPageCardBody  {
     min-width: 400px; 
+    max-height: 600px;
     overflow-y: scroll;
     overflow-x: hidden;
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
 }
 
+.loginPageCardBody::-webkit-scrollbar {
+    /* Chrome, Safari, Opera*/ 
+    display: none;
+}
 #usernameInputBoxLabel {
     position: relative; 
 }
@@ -37,7 +44,7 @@
     padding: 10px 40px;
 }
 
-#submitButton {
+.submitButton {
     color: white; 
     padding: 10px 32px; 
     cursor: pointer; 

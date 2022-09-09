@@ -1,12 +1,14 @@
-.loginPageCardBody  {
+.signUpPageCardBody  {
     min-width: 400px; 
+    max-height: 800px;
+
     overflow-y: scroll;
     overflow-x: hidden;
     -ms-overflow-style: none;  /* IE and Edge */
     scrollbar-width: none;  /* Firefox */
 }
 
-.loginPageCardBody::-webkit-scrollbar {
+.signUpPageCardBody::-webkit-scrollbar {
     /* Chrome, Safari, Opera*/ 
     display: none;
 }

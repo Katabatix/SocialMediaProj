@@ -77,16 +77,16 @@ const LoginPage = (): JSX.Element => {
                     </div>
                     <div className="col-1"></div>
                 </div>
-                <div className="row" style={{ marginTop: "10vh" }}>
+                <div className="mt-4 row">
                     <div className="col-1"></div>
                     <div className="col" style={{ display: "flex", justifyContent: "center" }}>
-                        <Button type="submit" id="submitButton">
+                        <Button type="submit" className="submitButton">
                             Sign in
                         </Button>
                     </div>
                     <div className="col-1"></div>
                 </div>
-                <div className="row" style={{ marginTop: "10vh" }}>
+                <div className="mt-5 row">
                     <div className="col"></div>
                     <div className="col" style={{ display: "flex", justifyContent: "center" }}>
                         <Form.Label>
@@ -98,12 +98,10 @@ const LoginPage = (): JSX.Element => {
                 <div className="row">
                     <div className="col-1"></div>
                     <div className="col" style={{ display: "flex", justifyContent: "center" }}>
-                        <button id="signUpButton" onClick={event => Signup(event)}>
+                        <button className="signUpButton" onClick={event => Signup(event)}>
                             Sign up
                         </button>
                     </div>
-
-                    {/* <Navigate to="/signup">Sign up</Navigate> */}
                     <div className="col-1"></div>
                 </div>
             </Form>
