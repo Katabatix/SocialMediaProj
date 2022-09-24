@@ -10,11 +10,15 @@ exports.AppModule = void 0;
 const common_1 = require("@nestjs/common");
 const app_controller_1 = require("./app.controller");
 const app_service_1 = require("./app.service");
+const login_module_1 = require("./login/login.module");
+const users_module_1 = require("./users/users.module");
+const posts_module_1 = require("./posts/posts.module");
+const notifs_module_1 = require("./notifs/notifs.module");
 let AppModule = class AppModule {
 };
 AppModule = __decorate([
     (0, common_1.Module)({
-        imports: [],
+        imports: [login_module_1.LoginModule, users_module_1.UsersModule, posts_module_1.PostsModule, notifs_module_1.NotifsModule],
         controllers: [app_controller_1.AppController],
         providers: [app_service_1.AppService],
     })
