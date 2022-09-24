@@ -12,7 +12,6 @@ const config_1 = require("@nestjs/config");
 const typeorm_1 = require("@nestjs/typeorm");
 const app_controller_1 = require("./app.controller");
 const app_service_1 = require("./app.service");
-const login_module_1 = require("./login/login.module");
 const users_module_1 = require("./users/users.module");
 const posts_module_1 = require("./posts/posts.module");
 const notifs_module_1 = require("./notifs/notifs.module");
@@ -33,7 +32,6 @@ AppModule = __decorate([
                 synchronize: true,
                 entities: [],
             }),
-            login_module_1.LoginModule,
             users_module_1.UsersModule,
             posts_module_1.PostsModule,
             notifs_module_1.NotifsModule,

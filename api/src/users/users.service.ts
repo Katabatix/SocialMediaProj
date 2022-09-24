@@ -56,4 +56,21 @@ export class UsersService {
       return 1;
     }
   }
+
+  async login(username: string, password: string) {
+    try {
+      const user = await this.userRepo.findOneOrFail({
+        where: {
+          username: username,
+        },
+      });
+      if (user.password === password) {
+        // this.userRepo.update(); TODO HERE
+        return true;
+      } else return false;
+    } catch (ex) {
+      console.log(ex);
+      return false;
+    }
+  }
 }

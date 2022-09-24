@@ -3,7 +3,6 @@ import { ConfigModule } from '@nestjs/config';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
-import { LoginModule } from './login/login.module';
 import { UsersModule } from './users/users.module';
 import { PostsModule } from './posts/posts.module';
 import { NotifsModule } from './notifs/notifs.module';
@@ -22,7 +21,6 @@ import { NotifsModule } from './notifs/notifs.module';
       synchronize: true,
       entities: [],
     }),
-    LoginModule,
     UsersModule,
     PostsModule,
     NotifsModule,
