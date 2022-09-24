@@ -10,7 +10,7 @@ import {
 @Entity()
 export class Users {
   @PrimaryColumn()
-  username: number;
+  username: string;
 
   @Column()
   password: string;

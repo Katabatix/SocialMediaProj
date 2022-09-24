@@ -1,26 +1,59 @@
 import { Injectable } from '@nestjs/common';
-import { CreateUserDto } from './dto/create-user.dto';
-import { UpdateUserDto } from './dto/update-user.dto';
+import { InjectRepository } from '@nestjs/typeorm';
+import { parse } from 'date-fns';
+import { Repository } from 'typeorm';
+import { Users } from './entities/users.entity';
 
 @Injectable()
 export class UsersService {
-  create(createUserDto: CreateUserDto) {
-    return 'This action adds a new user';
-  }
+  constructor(
+    @InjectRepository(Users)
+    private userRepo: Repository<Users>,
+  ) {}
 
-  findAll() {
-    return `This action returns all users`;
-  }
-
-  findOne(id: number) {
-    return `This action returns a #${id} user`;
-  }
-
-  update(id: number, updateUserDto: UpdateUserDto) {
-    return `This action updates a #${id} user`;
-  }
-
-  remove(id: number) {
-    return `This action removes a #${id} user`;
+  /**
+   *
+   * @param username
+   * @param password
+   * @param email
+   * @param firstName
+   * @param lastName
+   * @param birthday
+   * @returns 1 if OK, -1 if username exists, -2 if email exists
+   */
+  async checkCreateUser(
+    username: string,
+    password: string,
+    email: string,
+    firstName: string,
+    lastName: string,
+    birthday: Date,
+  ) {
+    if ((await this.userRepo.findOneBy({ email: email })) !== null) return -2;
+    else if ((await this.userRepo.findOneBy({ username: username })) !== null)
+      return -1;
+    else {
+      if (birthday instanceof Date)
+        this.userRepo.save({
+          username: username,
+          password: password,
+          email: email,
+          firstName: firstName,
+          lastName: lastName,
+          birthday: birthday,
+        });
+      else {
+        const placeholderDate = parse('Jan 1', 'MMM d', new Date());
+        this.userRepo.save({
+          username: username,
+          password: password,
+          email: email,
+          firstName: firstName,
+          lastName: lastName,
+          birthday: placeholderDate,
+        });
+      }
+      return 1;
+    }
   }
 }
