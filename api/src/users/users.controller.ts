@@ -1,6 +1,15 @@
-import { Controller, Post, Body, Res, HttpStatus } from '@nestjs/common';
+import {
+  Controller,
+  Post,
+  Body,
+  Res,
+  HttpStatus,
+  Delete,
+} from '@nestjs/common';
+import { roundToNearestMinutesWithOptions } from 'date-fns/fp';
 import { Response } from 'express';
 import { CreateUserDto } from './dto/create-user.dto';
+import { DeleteUserDto } from './dto/delete-user.dto';
 import { LoginUserDto } from './dto/login-user.dto';
 import { UsersService } from './users.service';
 
@@ -38,9 +47,30 @@ export class UsersController {
 
   @Post('login')
   async login(@Body() loginUserDto: LoginUserDto, @Res() response: Response) {
-    return await this.usersService.login(
-      loginUserDto.username,
-      loginUserDto.password,
-    );
+    if (
+      await this.usersService.login(
+        loginUserDto.username,
+        loginUserDto.password,
+      )
+    )
+      response.status(HttpStatus.OK).send('Logged in');
+    else response.status(HttpStatus.BAD_REQUEST).send('Incorrect login');
+  }
+
+  @Delete('delete')
+  async deleteUser(
+    @Body() deleteUserDto: DeleteUserDto,
+    @Res() response: Response,
+  ) {
+    if (
+      await this.usersService.deleteUser(
+        deleteUserDto.username,
+        deleteUserDto.password,
+      )
+    )
+      response
+        .status(HttpStatus.ACCEPTED)
+        .send(`${deleteUserDto.username} deleted`);
+    else response.status(HttpStatus.BAD_REQUEST).send('Incorrect password');
   }
 }

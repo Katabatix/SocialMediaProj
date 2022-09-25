@@ -64,8 +64,23 @@ export class UsersService {
           username: username,
         },
       });
+      if (user.password === password) return true;
+      else return false;
+    } catch (ex) {
+      console.log(ex);
+      return false;
+    }
+  }
+
+  async deleteUser(username: string, password: string) {
+    try {
+      const user = await this.userRepo.findOneOrFail({
+        where: {
+          username: username,
+        },
+      });
       if (user.password === password) {
-        // this.userRepo.update(); TODO HERE
+        this.userRepo.delete(user);
         return true;
       } else return false;
     } catch (ex) {
