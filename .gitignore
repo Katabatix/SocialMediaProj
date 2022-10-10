@@ -3,3 +3,6 @@
 /api/.env
 /frontend/node_modules
 /node_modules
+
+#just in case
+package*.json
