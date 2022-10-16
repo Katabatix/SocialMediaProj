@@ -1,5 +1,6 @@
-import React, { useState } from "react";
+import React, { useState, useContext, MouseEventHandler } from "react";
 import { Button, Card, Form } from "react-bootstrap";
+import loginContext from "../context/loginContext";
 import {
     BrowserRouter as Router,
     Route,
@@ -10,6 +11,8 @@ import {
 import "bootstrap/dist/css/bootstrap.css";
 import "./LoginPage.css";
 import SigninPage from "../Signup/SignupPage";
+import axios from "../axios";
+
 type LoginPageProps = {
     // number: number;
 };
@@ -17,17 +20,34 @@ type LoginPageProps = {
 const LoginPage = (): JSX.Element => {
     const navigate = useNavigate();
     const [username, setUsername] = useState("");
-    const handleSignin = (event: React.FormEvent<HTMLFormElement>) => {
-        event.preventDefault();
-        console.log("Sign in", username);
-        navigate("/homepage")
+    const [password, setPassword] = useState("");
+    const handleSignin = (e: React.FormEvent<HTMLFormElement>) => {
+        console.log(e)
+        // axios.post('/users/login', {
+        //     "username": username,
+        //     "password": password
+        // })
+        //     .then((resp) => {
+
+        //         console.log(resp);
+        //         // if (resp.status == 201 || resp.status == 200) navigate('/');
+        //     }).catch(error => console.log(error));
+
     };
 
-    const Signup = (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) =>
-        navigate("/signup");
+    const context = useContext(loginContext);
+    const Signup = (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
+        // console.log(msg);
+        console.log(context.user);
+        // navigate("/signup");
+    }
 
+
+
+    // const testing = (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => { console.log(msg) };
     return (
         <>
+            {/* {{ msg }} */}
             <Card
                 className="loginPageCardBody"
                 style={{
@@ -47,7 +67,7 @@ const LoginPage = (): JSX.Element => {
                         >
                             <Form.Label style={{ fontSize: "30px", fontWeight: "bold" }}>
                                 Login
-              </Form.Label>
+            </Form.Label>
                         </div>
                         <div className="col"></div>
                     </div>
@@ -90,6 +110,7 @@ const LoginPage = (): JSX.Element => {
                                         className="inputBox"
                                         type="password"
                                         placeholder="Enter password"
+                                        onChange={(e) => setPassword(e.target.value)}
                                     />
                                 </label>
                             </div>
@@ -115,7 +136,7 @@ const LoginPage = (): JSX.Element => {
                         >
                             <Button type="submit" className="submitButton">
                                 Sign in
-              </Button>
+                            </Button>
                         </div>
                         <div className="col-1"></div>
                     </div>
@@ -140,7 +161,7 @@ const LoginPage = (): JSX.Element => {
                                 onClick={(event) => Signup(event)}
                             >
                                 Sign up
-              </button>
+            </button>
                         </div>
                         <div className="col-1"></div>
                     </div>
