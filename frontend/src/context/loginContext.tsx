@@ -1,5 +1,6 @@
-import { createContext } from 'react';
+import { createContext } from "react";
+import { UserContext } from "../types";
 
-const loginContext = createContext({});
+const loginContext = createContext<Partial<UserContext>>({});
 
 export default loginContext;
