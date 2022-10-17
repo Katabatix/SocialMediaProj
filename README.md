@@ -15,4 +15,4 @@ Features:
 
 ## Pictures
 
-Login Page: [Login Page Image](/readme_imgs/login_page.png)
+Login Page: ![Login Page Image](/readme_imgs/login_page.png)
