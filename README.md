@@ -1,14 +1,18 @@
-# SocialMediaProj
+# Social Media Project
 
-IMPORTANT: add .env file to api folder with this information:
+Social Media Project is a mock social media app created by Wilson Chiu and Nathan Hui using ReactJS, NestJS, and PostgreSQL.
 
-# PostgreSQL Database Infomation
+Features:
 
-PGDATABASE=smp
-PGUSER=postgres
-PGPASSWORD=
+- User Creation
 
-# PostgreSQL Host and Port Infomation
+## Installation
 
-PGHOST=localhost
-PGPORT=5432
+1. Ensure NodeJS is installed.
+2. Clone this repository and run `npm install` inside /frontend and /api
+3. `cd /frontend` then run `npm start`
+4. `cd /api` then run `npm run start:dev`
+
+## Pictures
+
+Login Page: [Login Page Image](/readme_imgs/login_page.png)
