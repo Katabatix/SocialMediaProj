@@ -11,3 +11,9 @@ export type User = {
   username: string;
   password: string;
 };
+
+export type Post = {
+  id: number;
+  username: string;
+  postContent: string;
+}
