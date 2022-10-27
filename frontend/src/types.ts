@@ -11,3 +11,12 @@ export type User = {
   username: string;
   password: string;
 };
+
+export type UserInfo = {
+  username: string;
+  email: string;
+  firstName: string;
+  lastName: string;
+  birthday: Date;
+  status?: string;
+};

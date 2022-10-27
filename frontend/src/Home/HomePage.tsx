@@ -2,6 +2,7 @@ import React, { useContext } from "react";
 import { Navbar } from "react-bootstrap";
 import loginContext from "../context/loginContext";
 import HeaderNav from "../HeaderNav/HeaderNav";
+import Profile from "../Profile/Profile";
 
 const HomePage = (): JSX.Element => {
   const userCon = useContext(loginContext);
@@ -12,10 +13,10 @@ const HomePage = (): JSX.Element => {
     <div
       style={{ width: "100vw", height: "100vh", backgroundColor: "#f0f2f5" }}
     >
-      <button onClick={test}>click me</button>
       <div style={{ width: "100vw", height: "7vh" }}>
         <HeaderNav></HeaderNav>
       </div>
+      <Profile />
       <div className="row">
         <div className="col-2">
           <Navbar></Navbar>
@@ -23,6 +24,7 @@ const HomePage = (): JSX.Element => {
         <div className="col">asdasdad</div>
         <div className="col-2">qweqeqeqacsfca</div>
       </div>
+      <div></div>
     </div>
   );
 };

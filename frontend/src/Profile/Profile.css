@@ -1,0 +1,13 @@
+.Profile {
+  width: 40vw;
+  height: 20vh;
+  margin: auto;
+}
+
+.profile-pic {
+  margin: 1vmin;
+  border: 5vmin;
+  width: 10vw;
+  height: 10vw;
+  border-radius: 50%;
+}
